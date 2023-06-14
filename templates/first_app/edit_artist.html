@@ -1,0 +1,20 @@
+{% extends "first_app/base.html" %}
+
+{% block body_block %}
+<h2>Edit Form</h2>
+<br>
+{% if success_msg %}
+<div class="alert alert-success">
+    {{success_msg}}
+</div>
+{% endif %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    {{edit_form.as_p}}
+    <input type="submit" class="btn btn-info" value="Update">
+</form>
+<br>
+
+{% endblock %}
